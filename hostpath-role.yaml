@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  annotations:
+  name: leader-locking-hostpath-provisioner
+  namespace: kube-system
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - endpoints
+  verbs:
+  - get
+  - update
+  - patch
+- apiGroups:
+  - ""
+  resources:
+  - endpoints
+  verbs:
+  - list
+  - watch
+  - create
